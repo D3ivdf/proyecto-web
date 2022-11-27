@@ -20,9 +20,10 @@ class Tablas extends Migration
             $usuarios->string('Apellidos');
             $usuarios->string('Cedula')->unique();
             $usuarios->string('Correo_electronico');
-            $usuarios->date('Fecha_nacimiento');
+            $usuarios->string('Fecha_nacimiento');
             $usuarios->string('Genero');
             $usuarios->string('Contraseña');
+            $usuarios->timestamps();
         });
 
         Schema::create('Rol',function(Blueprint $rol){
@@ -31,6 +32,7 @@ class Tablas extends Migration
             $rol->string('Detalles');
             $rol->unsignedBigInteger('Id_usuario');
             $rol->foreign('Id_usuario')->references('Id_usuario')->on('Usuarios'); 
+            $rol->timestamps();
         });
 
         Schema::create('Multa',function(Blueprint $multa){
@@ -40,6 +42,7 @@ class Tablas extends Migration
             $multa->string('Detalles');
             $multa->unsignedBigInteger('Id_usuario');
             $multa->foreign('Id_usuario')->references('Id_usuario')->on('Usuarios'); 
+            $multa->timestamps();
         });
 
         Schema::create('Estacion',function(Blueprint $estacion){
@@ -48,6 +51,7 @@ class Tablas extends Migration
             $estacion->integer('Num_bicicletas');
             $estacion->unsignedBigInteger('Id_usuario');
             $estacion->foreign('Id_usuario')->references('Id_usuario')->on('Usuarios'); 
+            $estacion->timestamps();
         });
 
         Schema::create('Bicicletas',function(Blueprint $bici){
@@ -57,12 +61,14 @@ class Tablas extends Migration
             $bici->string('Detalles');
             $bici->unsignedBigInteger('Id_estacion');
             $bici->foreign('Id_estacion')->references('Id_estacion')->on('Estacion'); 
+            $bici->timestamps();
         });
 
         Schema::create('Taller',function(Blueprint $taller){
             $taller->id('Id_taller');
             $taller->string('Nombre');
             $taller->string('Detalles');
+            $taller->timestamps();
         });
         
         Schema::create('Mantenimiento',function(Blueprint $mantenimiento){
@@ -71,6 +77,7 @@ class Tablas extends Migration
             $mantenimiento->foreign('Id_taller')->references('Id_taller')->on('Taller'); 
             $mantenimiento->unsignedBigInteger('Id_bici');
             $mantenimiento->foreign('Id_bici')->references('Id_bici')->on('Bicicletas'); 
+            $mantenimiento->timestamps();
         });
 
         Schema::create('Prestamo',function(Blueprint $prestamo){
