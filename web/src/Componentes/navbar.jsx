@@ -2,6 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carrusel from './carrusel';
+import Login from './Login';
+import Registrarce from './Registrarce';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -14,12 +16,20 @@ export default function navbar() {
           <div className="container-fluid">
             <ul className="navbar-nav me-auto">
               <Link className="nav-link" to="/Carrusel">Carrusel</Link>
+              <Link className="nav-link" to="/Registrarce">Registrarce</Link>
+              <Link className="nav-link" to="/Login">Inicio de sesion</Link>
             </ul>
           </div>
         </nav>
         {/* definicion de rutas para paginas */}
         <Routes>
           <Route path="/Carrusel" element={<Carrusel />} />
+        </Routes>
+        <Routes>
+          <Route path="/Registrarce" element={<Registrarce />} />
+        </Routes>
+        <Routes>
+          <Route path="/Login" element={<Login />} />
         </Routes>
         <Mapa />
       </Router>
