@@ -5,6 +5,7 @@ import Carrusel from './carrusel';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Mapa from './Mapa'
 export default function navbar() {
   return (
     <div className='Container-nav'>
@@ -20,7 +21,8 @@ export default function navbar() {
         <Routes>
           <Route path="/Carrusel" element={<Carrusel />} />
         </Routes>
+        <Mapa />
       </Router>
     </div>
-  )
+  );
 }
