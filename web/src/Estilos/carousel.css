@@ -1,0 +1,18 @@
+.carousel{
+	display: block;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	top: 100px;
+	height: 601px;
+	width: 849px;
+}
+
+.carus-item{
+	border-radius: 10px;
+	display: flex;
+	border: 1px solid #000;
+}
+.bicis{
+	border-radius: 10px 10px 10px 10px;
+}
