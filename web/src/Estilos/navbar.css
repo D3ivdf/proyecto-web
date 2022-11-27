@@ -1,0 +1,9 @@
+.Container-nav{
+	display: flex;
+	align-items: center;
+}
+.contenido{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}

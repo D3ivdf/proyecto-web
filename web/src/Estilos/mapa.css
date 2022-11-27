@@ -1,0 +1,9 @@
+.mapa{
+	margin-top: 400px;
+	align-items: center;
+	margin-left: 280px;
+	width: 800px;
+	height: 400px;
+	border: 1px solid #000;
+	border-radius: 21px;
+}
