@@ -15,7 +15,7 @@ export default function navbar() {
         <nav class="navbar navbar-dark bg-dark">
           <div className="container-fluid">
             <ul className="navbar-nav me-auto">
-              <Link className="nav-link" to="/Carrusel">Carrusel</Link>
+              <Link className="nav-link" to="/">Inicio</Link>
               <Link className="nav-link" to="/Registrarce">Registrarce</Link>
               <Link className="nav-link" to="/Login">Inicio de sesion</Link>
             </ul>
@@ -23,7 +23,7 @@ export default function navbar() {
         </nav>
         {/* definicion de rutas para paginas */}
         <Routes>
-          <Route path="/Carrusel" element={<Carrusel />} />
+          <Route path="/" element={<Carrusel />} />
         </Routes>
         <Routes>
           <Route path="/Registrarce" element={<Registrarce />} />

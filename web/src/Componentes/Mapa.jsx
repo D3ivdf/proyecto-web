@@ -5,12 +5,13 @@ import '../Estilos/mapa.css'
 const containerStyle = {
   width: '800px',
   height: '400px',
-  borderRadius: '20px'
+  borderRadius: '20px',
+  display: 'flex'
 };
 
 const center = {
-  lat: 5.06889,
-  lng: -75.51738
+  lat: 5.065960713049606,
+  lng: -75.49068198649893
 };
 
 function MyComponent() {
