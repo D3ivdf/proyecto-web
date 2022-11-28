@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import Carrusel from './carrusel';
 import Login from './Login';
 import Registrarce from './Registrarce';
@@ -23,10 +24,10 @@ export default function navbar() {
                   <Link className="nav-link" to="/">Inicio</Link>
                 </li>
                 <li class="nav-item">
-                  <Link className="nav-link" to="/Registrarce">Registrarce</Link>
+                  <Link className="nav-link" to="/Registrarce">Registrarce <i class="bi bi-box-arrow-in-down"></i></Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Login">Inicio de sesion</Link>
+                  <Link className="nav-link" to="/Login">Inicio de sesion <i class="bi bi-box-arrow-in-right"></i></Link>
                 </li>
               </ul>
             </div>
