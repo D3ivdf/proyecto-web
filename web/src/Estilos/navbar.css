@@ -1,9 +1,5 @@
-.Container-nav{
+.nav-items{
+	background-color: aqua;
 	display: flex;
-	align-items: center;
-}
-.contenido{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	margin-left: auto;
 }

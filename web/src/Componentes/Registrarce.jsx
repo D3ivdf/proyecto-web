@@ -13,7 +13,7 @@ export default function Registrarce() {
                   </div>
                   </div>
                   <div className="mb-3 row">
-                    <label for="staticFecha" className="col-sm-6 col-form-label">Fecha de Nacimiento</label>
+                    <label for="staticFecha" className="col-sm-8 col-form-label">Fecha de Nacimiento</label>
                   <div className="col-sm-12">
                   <input type="date" className="form-control" id="exampleFormControlInput1"/>
                   </div>
