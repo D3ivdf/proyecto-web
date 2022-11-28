@@ -1,6 +1,19 @@
 .nav-items{
-	background-color: aqua;
+	background-color: rgb(9, 134, 103);
 	display: flex;
 	margin-left: auto;
 	border-radius: 20px;
+}
+.logo{
+	height: 60px;
+	width: auto;
+}
+.contenedor{
+	height: 50px;
+}
+.navbar{
+	background-color: rgb(46, 148, 5);
+}
+.nav-link{
+	color: white;
 }
