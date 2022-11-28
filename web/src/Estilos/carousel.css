@@ -4,14 +4,15 @@
 	align-items: center;
 	margin: auto;
 	top: 100px;
-	height: 602px;
-	width: 850px;
+	height: 601px;
+	width: 851px;
 }
 
 .carus-item{
 	border-radius: 10px;
 	display: flex;
-	border: 1px solid #000;
+	border: solid 1px #000;
+	box-shadow: black 0px 0px 20px;
 }
 .bicis{
 	border-radius: 10px 10px 10px 10px;

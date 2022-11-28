@@ -6,7 +6,13 @@ const containerStyle = {
   width: '800px',
   height: '400px',
   borderRadius: '20px',
-  display: 'flex'
+  display: 'flex',
+  alignItem: 'center',
+  justifyContent: 'center',
+  textAling: 'center',
+  margin: 'auto',
+  boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.75)'
+
 };
 
 const center = {
