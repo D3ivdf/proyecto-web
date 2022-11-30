@@ -1,0 +1,21 @@
+.caja{
+    display: flex;
+    margin:auto;
+    width: 600px;
+    height: 850px;
+    background-color: rgb(64, 71, 110);
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(0,0,0,0.2);
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-top: 300px;
+    text-align: center;
+}
+label{
+    color: white;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
