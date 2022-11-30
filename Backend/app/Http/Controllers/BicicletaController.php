@@ -46,7 +46,6 @@ class BicicletaController extends Controller
 
         return $bicicleta;
     }
-
     /**
      * Display the specified resource.
      *

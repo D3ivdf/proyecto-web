@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Multa;
 use Illuminate\Http\Request;
-
+use App\Models\Usuarios;
 class MultaController extends Controller
 {
     /**
@@ -27,6 +27,11 @@ class MultaController extends Controller
     public function create()
     {
         //
+        $multa=new Multa();
+        $usuarios=Usuarios::pluck('Id_usuario');
+        return $multa.compact('multa','usuarios');
+        
+
     }
 
     /**
@@ -42,6 +47,7 @@ class MultaController extends Controller
         $multa->Fecha= $request ->Fecha;
         $multa->Duracion= $request ->Duracion;
         $multa->Detalles= $request ->Detalles;
+        $multa->id_usuario=$request ->id_usuario;
         $multa->save();
         $multas=Multa::all();
         return $multas;
