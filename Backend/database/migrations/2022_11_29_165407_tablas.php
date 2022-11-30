@@ -30,8 +30,8 @@ class Tablas extends Migration
             $usuarios->string('Fecha_nacimiento');
             $usuarios->string('Genero');
             $usuarios->string('Contraseña');
-            $usuarios->unsignedBigInteger('Id_rol');
-            $usuarios->foreign('Id_rol')->references('Id_usuario')->on('Usuarios'); 
+            $usuarios->unsignedBigInteger('Id_rol');// Bici_usuario=1, Administrador =2 
+            $usuarios->foreign('Id_rol')->references('Id_rol')->on('Rol'); 
             $usuarios->timestamps();
         });
 
@@ -40,8 +40,8 @@ class Tablas extends Migration
             $multa->date('Fecha');
             $multa->integer('Duracion');
             $multa->string('Detalles');
-            $multa->unsignedBigInteger('Id_usuario');
-            $multa->foreign('Id_usuario')->references('Id_multa')->on('Multa'); 
+            $multa->unsignedBigInteger('id_usuario');
+            $multa->foreign('id_usuario')->references('Id_usuario')->on('Usuarios'); 
             $multa->timestamps();
         });
 
@@ -49,8 +49,8 @@ class Tablas extends Migration
             $estacion->id('Id_estacion');
             $estacion->string('Nombre');
             $estacion->integer('Num_bicicletas');
-            $estacion->unsignedBigInteger('Id_usuario');
-            $estacion->foreign('Id_usuario')->references('Id_estacion')->on('Estacion'); 
+            $estacion->unsignedBigInteger('id_usuario');
+            $estacion->foreign('id_usuario')->references('Id_Usuario')->on('Usuarios'); 
             $estacion->timestamps();
         });
 
@@ -59,8 +59,8 @@ class Tablas extends Migration
             $bici->string('Tipo_bici');
             $bici->string('Estado');
             $bici->string('Detalles');
-            $bici->unsignedBigInteger('Id_estacion');
-            $bici->foreign('Id_estacion')->references('Id_bici')->on('Bicicletas'); 
+            $bici->unsignedBigInteger('id_estacion');
+            $bici->foreign('id_estacion')->references('Id_estacion')->on('Estacion'); 
             $bici->timestamps();
         });
 
@@ -73,26 +73,30 @@ class Tablas extends Migration
         
         Schema::create('Mantenimiento',function(Blueprint $mantenimiento){
             $mantenimiento->id('Id_mantenimiento');
-            $mantenimiento->unsignedBigInteger('Id_taller');
-            $mantenimiento->foreign('Id_taller')->references('Id_mantenimiento')->on('Mantenimiento'); 
-            $mantenimiento->unsignedBigInteger('Id_bici');
-            $mantenimiento->foreign('Id_bici')->references('Id_mantenimiento')->on('Mantenimiento'); 
+            $mantenimiento->unsignedBigInteger('id_taller');
+            $mantenimiento->foreign('id_taller')->references('Id_taller')->on('Taller'); 
+            $mantenimiento->unsignedBigInteger('id_bici');
+            $mantenimiento->foreign('id_bici')->references('Id_bici')->on('Bicicletas'); 
             $mantenimiento->timestamps();
         });
 
         Schema::create('Prestamo',function(Blueprint $prestamo){
             $prestamo->id('Id_prestamo');
             $prestamo->timestamps();
-            $prestamo->unsignedBigInteger('Id_bici');
-            $prestamo->foreign('Id_bici')->references('Id_prestamo')->on('Prestamo');
-            $prestamo->unsignedBigInteger('Id_estacion');
-            $prestamo->foreign('Id_estacion')->references('Id_prestamo')->on('Prestamo'); 
-            $prestamo->unsignedBigInteger('Id_usuario');
-            $prestamo->foreign('Id_usuario')->references('Id_prestamo')->on('Prestamo');     
+            $prestamo->unsignedBigInteger('id_bici');
+            $prestamo->foreign('id_bici')->references('Id_bici')->on('Bicicletas');
+            $prestamo->unsignedBigInteger('id_estacion');
+            $prestamo->foreign('id_estacion')->references('Id_estacion')->on('Estacion'); 
+            $prestamo->unsignedBigInteger('id_usuario');
+            $prestamo->foreign('id_usuario')->references('Id_usuario')->on('Usuarios');     
         });
         
     }
-
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         //

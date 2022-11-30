@@ -16,7 +16,8 @@ class RolController extends Controller
     {
         //
         $Roles=Rol::all();
-        return $Roles;    }
+        return $Roles;    
+    }
 
     
     public function store(Request $request)

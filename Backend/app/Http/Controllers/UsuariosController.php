@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Rol;
 
+
 class UsuariosController extends Controller
 {
     
@@ -16,30 +17,27 @@ class UsuariosController extends Controller
         //
         $users=Usuarios::all();
         return $users;
-    }
-
-    
+    }    
     public function create()
     {
         //
-        
+        //$user=new Usuarios();
+        //$Rol=Rol::pluck('Id_rol,Tipo');
+        return view('Log_in');
     }
-
-    
     public function store(Request $request)
     {
-        //
-        
         $user= new Usuarios();
+        //$roles= Rol::pluck('Tipo','Id_rol');
         $user->Nombres= $request ->Nombres;
         $user->Apellidos= $request ->Apellidos;
-        $user->Cedula= $request ->Cedula;
+        $user->Cedula= $request->Cedula;
         $user->Correo_electronico =$request ->Correo_electronico;
         $user->Fecha_nacimiento= $request->Fecha_nacimiento;
         $user->Genero=$request->Genero;
         $user->Contraseña=$request->Contraseña;
+        $user->id_rol=$request->id_rol;
         $user->save();
-
         return $user;
     }
 
@@ -70,7 +68,6 @@ class UsuariosController extends Controller
         $user->Fecha_nacimiento= $request->Fecha_nacimiento;
         $user->Genero=$request->Genero;
         $user->Contraseña=$request->Contraseña;
-        $user->Id_rol=$request ->Id_rol;
         $user->save();
         return $user;
     }

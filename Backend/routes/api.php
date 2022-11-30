@@ -2,28 +2,38 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+/*Route::prefix('Usuario')->group(function(){
+    Route::get('/',[UsuariosController::class,'index'])->name('Usuario.index');
+    Route::get('crear',[UsuariosController::class,'create'])->name('Usuario.create');
+    Route::post('store',[UsuariosController::class,'store'])->name('Usuario.store');
+    Route::get('editar/{id}',[UsuariosController::class,'edit'])->name('Usuario.edit');
+    Route::get('editar/{id}',[UsuariosController::class,'edit'])->name('Usuario.edit');
+    
+    
+});
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuariosController;
 use App\Http\Controllers\TallerController;
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
-
+use App\Http\Controllers\MantenimientoController;
+use App\Http\Controllers\MultaController;
+use App\Http\Controllers\EstacionController;
+use App\Http\Controllers\PrestamoController;
+use App\Http\Controllers\BicicletaController;
 
 Route::resource('Rol',RolController::class);
 Route::resource('Usuario',UsuariosController::class);
 Route::resource('Taller',TallerController::class);
 Route::resource('Mantenimiento',TallerController::class);
+Route::resource('Multa',MultaController::class);
+Route::resource('Estacion',EstacionController::class);
+Route::resource('Bicicleta',BicicletaController::class);
+Route::resource('Prestamo',PrestamoController::class);
 
+
+
+
+*/
 
 
 

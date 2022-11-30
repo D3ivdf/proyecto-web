@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Estacion;
 use Illuminate\Http\Request;
-
+use App\Models\Usuarios;
 class EstacionController extends Controller
 {
     /**
@@ -27,6 +27,9 @@ class EstacionController extends Controller
     public function create()
     {
         //
+        $estacion=new Estacion();
+        $user=Usuarios::pluck('id_usuario','id_rol');
+        return user.compact('estacion','user');
     }
 
     /**
@@ -38,12 +41,17 @@ class EstacionController extends Controller
     public function store(Request $request)
     {
         //
-        $estacion= new Taller();
+        $exist=DB::table('Usuarios')->where('id_rol','2');
+        if(is_null($exist)){
+            $estacion= new Estacion();
         $estacion->Nombre= $request ->Nombre;
         $estacion->Num_bicicletas= $request ->Num_bicicletas;
+        
         $estacion->save();
-        $talleres=Taller::all();
-        return $talleres;
+        $estaciones=Estacion::all();
+        return $estaciones;        
+        }
+        return console.log("Denegado");
     }
 
     /**
