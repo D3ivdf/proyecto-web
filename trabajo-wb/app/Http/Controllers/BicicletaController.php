@@ -14,8 +14,8 @@ class BicicletaController extends Controller
      */
     public function index()
     {
-        $bicicletas = bicicleta::all();
-        return $bicicletas;
+        $bici = bicicleta::all();
+        return view('vistaE', compact('bici'));
     }
 
     /**
@@ -42,7 +42,7 @@ class BicicletaController extends Controller
         $bicicleta->tipo = $request->tipo;
         $bicicleta->detalles = $request->detalles;
         $bicicleta->save();
-        return view('inici');
+        return view('administrador');
     }
 
     /**
@@ -53,7 +53,6 @@ class BicicletaController extends Controller
      */
     public function show(bicicleta $bicicleta)
     {
-        //
     }
 
     /**
@@ -62,9 +61,11 @@ class BicicletaController extends Controller
      * @param  \App\Models\bicicleta  $bicicleta
      * @return \Illuminate\Http\Response
      */
-    public function edit(bicicleta $bicicleta)
+    public function edit($id)
     {
-        //
+        //     
+        $bicicleta = bicicleta::find($id);
+        return view('editbici',compact('bicicleta'));
     }
 
     /**
@@ -74,9 +75,16 @@ class BicicletaController extends Controller
      * @param  \App\Models\bicicleta  $bicicleta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, bicicleta $bicicleta)
+    public function update(Request $request, $id)
     {
         //
+        $bicicleta = bicicleta::find($id);
+        $bicicleta->modelo = $request->modelo;
+        $bicicleta->estacion = $request->estacion;
+        $bicicleta->tipo = $request->tipo;
+        $bicicleta->detalles = $request->detalles;
+        $bicicleta->save();
+        return view('editbici',compact('bicicleta'));
     }
 
     /**

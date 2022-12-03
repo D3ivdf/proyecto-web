@@ -23,7 +23,7 @@
                     <label for="exampleInputEmail1" class="form-label">Correo</label>
                     <input type="email" class="form-control" placeholder="david@ejemplo.com" id="exampleInputEmail1" aria-describedby="emailHelp" name="Email" id="Email">
                     <label for="exampleInputEmail1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" name="Password" id="contraseña">
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="Password" id="contraseña"><br>
                     <select class="form-select" aria-label="Default select example" name="rol" id="rol">
                         <option selected>Seleccione</option>
                         <option value="1">Administrador</option>

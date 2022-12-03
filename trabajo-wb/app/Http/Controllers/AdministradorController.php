@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\login;
+use App\Models\administrador;
 use Illuminate\Http\Request;
-use App\Models\usuario;
 
-class LoginController extends Controller
+class AdministradorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        $usuarios = usuario::all();
-        return $usuarios;
+        //
     }
 
     /**
@@ -37,20 +35,16 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        if($usuarios = usuario::where('Email', $request->Email)->where('Password', $request->Password)->first()){
-            return view('administrador');
-    }else{
-        return view('logins');
-    }
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\login  $login
+     * @param  \App\Models\administrador  $administrador
      * @return \Illuminate\Http\Response
      */
-    public function show(login $login)
+    public function show(administrador $administrador)
     {
         //
     }
@@ -58,10 +52,10 @@ class LoginController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\login  $login
+     * @param  \App\Models\administrador  $administrador
      * @return \Illuminate\Http\Response
      */
-    public function edit(login $login)
+    public function edit(administrador $administrador)
     {
         //
     }
@@ -70,10 +64,10 @@ class LoginController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\login  $login
+     * @param  \App\Models\administrador  $administrador
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, login $login)
+    public function update(Request $request, administrador $administrador)
     {
         //
     }
@@ -81,10 +75,10 @@ class LoginController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\login  $login
+     * @param  \App\Models\administrador  $administrador
      * @return \Illuminate\Http\Response
      */
-    public function destroy(login $login)
+    public function destroy(administrador $administrador)
     {
         //
     }
